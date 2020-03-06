@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/Auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'spotifyer';
+  public title = 'spotifyer';
+
+  constructor(public Auth: AuthService) {
+    // handle this
+  }
+
+  /**
+   *
+   */
+  login() {
+    const user = this.Auth.login();
+
+    console.log(user);
+  };
 }
